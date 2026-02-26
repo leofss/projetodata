@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("api/v1/raw-materials")
+@RequestMapping("api/v1/raw-material")
 @RequiredArgsConstructor
 public class RawMaterialController {
     private final RawMaterialService rawMaterialService;
