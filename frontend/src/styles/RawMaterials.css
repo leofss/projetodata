@@ -1,0 +1,13 @@
+.raw-materials {
+  padding: 20px;
+}
+
+.language-selector {
+  margin-bottom: 20px;
+}
+
+.language-selector select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

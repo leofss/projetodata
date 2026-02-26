@@ -1,6 +1,7 @@
 services:
   postgres:
     image: postgres:17.5
+    container_name: projetodata-db
     environment:
       POSTGRES_DB: projetodatadb
       POSTGRES_USER: postgres
@@ -8,20 +9,50 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+      - "5432:5432"
     networks:
       - local-network
+
   pgadmin:
     image: dpage/pgadmin4:9.5
+    container_name: projetodata-pgadmin
     depends_on:
       - postgres
     environment:
       PGADMIN_DEFAULT_EMAIL: projetodata@gmail.com
       PGADMIN_DEFAULT_PASSWORD: projetodata
     ports:
-      - 8083:80
+      - "8083:80"
     volumes:
       - pgadmin-data:/var/lib/pgadmin
+    networks:
+      - local-network
+
+  backend:
+    container_name: projetodata-back
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - FRONTEND_URL=http://localhost:3000
+    depends_on:
+      - postgres
+    networks:
+      - local-network
+
+  frontend:
+    container_name: projetodata-fe
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:5173"
+    environment:
+      - VITE_API_URL=http://localhost:8080/api/v1
+    depends_on:
+      - backend
     networks:
       - local-network
 

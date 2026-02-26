@@ -1,0 +1,86 @@
+.products {
+  padding: 20px;
+}
+
+.planning-button {
+  background-color: #28a745;
+}
+
+.view-button {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.add-composition-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px;
+}
+
+.remove-composition-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px;
+}
+
+.modal-content h3 {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.form-group.compositions {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group.compositions label {
+  width: auto;
+  margin-bottom: 10px;
+  margin-right: 0;
+}
+
+.composition-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  max-width: 20rem;
+}
+
+.composition-item span {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.composition-item select,
+.composition-item input {
+  flex: 1;
+}
+
+.composition-item select {
+  max-width: 10rem;
+}
+
+.composition-item input {
+  max-width: 5rem;
+}
+.compositions-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.suggestions-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}

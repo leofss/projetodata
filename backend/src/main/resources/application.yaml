@@ -1,3 +1,17 @@
 spring:
   application:
     name: projetodata
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://postgres:5432/projetodatadb
+    username: postgres
+    password: postgres
+app:
+  frontend:
+    url: ${FRONTEND_URL:http://localhost:3000}
